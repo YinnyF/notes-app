@@ -38,13 +38,9 @@ const addingNewElement = (newEl, newText) => {
 }
 
 const displayLinksFromStorage = () => {
-  for (let i = 1; i < elementId; i++) {
-    // Get the note
-
-    // Create the title and ensure 20 chars.
+  for (let i = 1; i < elementId + 1; i++) {
     let note = myStorage.getItem(i);
     let title = note.length < 20 ? note : note.slice(0, 19);
-
     let existingEl = document.createElement('li');
     let existingText = document.createTextNode(title);
     existingEl.appendChild(existingText);
@@ -59,6 +55,12 @@ const makeClickLinkDisplayNote = (i) => {
   document
     .getElementById(i)
     .addEventListener("click", function(clickEvent) {
-    console.log(`I have clicked an item in the list ${i}`);
+    let thisNote = myStorage.getItem(i);
+    displayNote(thisNote);
     })
+}
+
+const displayNote = (thisNote) => {
+// make HTML display message
+  console.log(`clicked ${thisNote}`);
 }
