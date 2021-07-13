@@ -51,6 +51,14 @@ const displayLinksFromStorage = () => {
     existingEl.setAttribute('id', i)
     let listPosition = document.getElementsByTagName('ul')[0];
     listPosition.appendChild(existingEl);
+    makeClickLinkDisplayNote(i);
   }
 }
 
+const makeClickLinkDisplayNote = (i) => {
+  document
+    .getElementById(i)
+    .addEventListener("click", function(clickEvent) {
+    console.log(`I have clicked an item in the list ${i}`);
+    })
+}
