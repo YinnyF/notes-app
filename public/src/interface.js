@@ -62,5 +62,11 @@ const makeClickLinkDisplayNote = (i) => {
 
 const displayNote = (thisNote) => {
 // make HTML display message
+  document.getElementById('note').innerText = thisNote;
+  document.querySelector('.note-pop-up').style.visibility = 'visible';
+  document.querySelector('.close').addEventListener("click", () => {
+    document.querySelector('.note-pop-up').style.visibility = 'hidden';
+  })
+
   console.log(`clicked ${thisNote}`);
 }
