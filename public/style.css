@@ -22,13 +22,13 @@ main {
   visibility: hidden;
   background-color: #fff;
   border-radius: 5px;
-  animation: note 1.8s ease-out;
+  animation: note .3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  animation-play-state: paused;
   position:relative;
   -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
           box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 }
-
 
  .note-pop-up:before, .note-pop-up:after
 {
@@ -59,9 +59,10 @@ main {
 .close {
   display: flex;
   align-items: center;
+  visibility: hidden;
   justify-content: center;
-  width: 16px;
-  height: 16px;
+  width: 15px;
+  height: 15px;
   background-color:rgb(255, 58, 58);
   position: absolute;
   top: 0px;

@@ -62,11 +62,23 @@ const makeClickLinkDisplayNote = (i) => {
 
 const displayNote = (thisNote) => {
 // make HTML display message
+  document.getElementById('note-block').classList.add('note-pop-up');
+  makeNoteVisible();
+  document.querySelector('.note-pop-up').style.WebkitAnimationPlayState = "running";
   document.getElementById('note').innerText = thisNote;
+  closeNote();
+}
+
+const makeNoteVisible = () => {
+  document.querySelector('.close').style.visibility = 'visible';
   document.querySelector('.note-pop-up').style.visibility = 'visible';
+}
+
+const closeNote = () => {
   document.querySelector('.close').addEventListener("click", () => {
     document.querySelector('.note-pop-up').style.visibility = 'hidden';
-  })
-
-  console.log(`clicked ${thisNote}`);
+    document.querySelector('.note-pop-up').style.WebkitAnimationPlayState = "paused";
+    document.querySelector('.note-pop-up').classList.remove('note-pop-up');
+    document.querySelector('.close').style.visibility = 'hidden';
+  });
 }
