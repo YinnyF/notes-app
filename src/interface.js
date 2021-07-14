@@ -37,6 +37,7 @@ const addingNewElement = (newEl, newText) => {
   newEl.setAttribute('id', elementId)
   let listPosition = document.getElementsByTagName('ul')[0];
   listPosition.appendChild(newEl);
+  makeClickLinkDisplayNote(elementId);
 }
 
 const displayLinksFromStorage = () => {
