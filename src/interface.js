@@ -9,11 +9,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const makeClickSubmitCreateLink = () => {
   let noteText = document.getElementById('note-text').value;
-  newNoteId = storingNote(noteText);
+  newNoteId = storeNote(noteText);
   createLink();
 }
 
-const storingNote = (noteText) => {
+const storeNote = (noteText) => {
   return myStorage.store(noteText);
 }
 
