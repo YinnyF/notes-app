@@ -1,5 +1,5 @@
 'use strict';
 
-class Thermostat {
+class Note {
 
 }
