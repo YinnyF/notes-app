@@ -33,7 +33,7 @@ main {
 
 
 
-.close {
+.close-btn {
   display: flex;
   align-items: center;
   visibility: hidden;
@@ -44,7 +44,6 @@ main {
   position: absolute;
   top: 0px;
   left: 0px;
-  margin: 5px;
   border-radius: 50%;
   color: white;
   border: none;
@@ -53,17 +52,23 @@ main {
           box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 }
 
-.close:hover {
+.close-btn:hover {
   transform: scale(1.06);
 }
 
-.close span {
+.close-btn span {
   color: rgb(255, 58, 58);
 }
 
-.close span:hover {
+.close-btn:hover span {
   visibility: visible;
   color: black;
+}
+
+header {
+  position: fixed;
+  width: inherit;
+  height: 20px;
 }
 
 #note {
