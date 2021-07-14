@@ -1,5 +1,15 @@
 'use strict';
 
-// class Note {
-//   addNote{}
-// }
+class Note {
+  constructor() {
+    this.notes = [];
+  }
+
+  addNote(content) {
+    this.notes.push(content);
+  }
+
+  getNote(i) {
+    return this.notes[i -1];
+  }
+}

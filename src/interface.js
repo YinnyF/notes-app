@@ -7,19 +7,14 @@ document.addEventListener("DOMContentLoaded", () => {
   displayLinksFromStorage();
 })
 
-const storingNote = (noteText) => {
-  return myStorage.store(noteText);
-}
-
-const getTitle = () => {
-  let note = myStorage.get(newNoteId);
-  return note.length < 20 ? note : note.slice(0, 19)
-}
-
 const makeClickSubmitCreateLink = () => {
   let noteText = document.getElementById('note-text').value;
   newNoteId = storingNote(noteText);
   createLink();
+}
+
+const storingNote = (noteText) => {
+  return myStorage.store(noteText);
 }
 
 const createLink = () => {
@@ -27,6 +22,11 @@ const createLink = () => {
   let newEl = document.createElement('li');
   let newText = document.createTextNode(title);
   addingNewElement(newEl, newText);
+}
+
+const getTitle = () => {
+  let note = myStorage.get(newNoteId);
+  return note.length < 20 ? note : note.slice(0, 19)
 }
 
 const addingNewElement = (newEl, newText) => {
