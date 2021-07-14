@@ -35,6 +35,7 @@ const addingNewElement = (newEl, newText) => {
   newEl.setAttribute('id', elementId)
   let listPosition = document.getElementsByTagName('ul')[0];
   listPosition.appendChild(newEl);
+  makeClickLinkDisplayNote(elementId);
 }
 
 const displayLinksFromStorage = () => {
@@ -62,5 +63,23 @@ const makeClickLinkDisplayNote = (i) => {
 
 const displayNote = (thisNote) => {
 // make HTML display message
-  console.log(`clicked ${thisNote}`);
+  document.getElementById('note-pop-up-id').classList.add('note-pop-up');
+  makeNoteVisible();
+  document.querySelector('.note-pop-up').style.WebkitAnimationPlayState = "running";
+  document.getElementById('note').innerText = thisNote;
+  closeNote();
+}
+
+const makeNoteVisible = () => {
+  document.querySelector('.close-btn').style.visibility = 'visible';
+  document.querySelector('.note-pop-up').style.visibility = 'visible';
+}
+
+const closeNote = () => {
+  document.querySelector('.close-btn').addEventListener("click", () => {
+    document.querySelector('.note-pop-up').style.visibility = 'hidden';
+    document.querySelector('.note-pop-up').style.WebkitAnimationPlayState = "paused";
+    document.querySelector('.note-pop-up').classList.remove('note-pop-up');
+    document.querySelector('.close-btn').style.visibility = 'hidden';
+  });
 }
