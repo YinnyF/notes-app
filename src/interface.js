@@ -16,8 +16,6 @@ const getTitle = () => {
   return note.length < 20 ? note : note.slice(0, 19)
 }
 
-//class storage
-
 const makeClickSubmitCreateLink = () => {
   elementId += 1;
   let noteText = document.getElementById('note-text').value;
