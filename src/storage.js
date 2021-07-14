@@ -3,14 +3,15 @@
 class Storage {
   constructor() {
     this.myStorage = window.sessionStorage
-    this.numberOfNotes = this.myStorage.length
+    this.noteId = this.myStorage.length + 1;
   }
 
   store(content) {
-    this.myStorage.setItem(this.numberOfNotes +1, content);
+    this.myStorage.setItem(this.noteId, content);
+    this.noteId++
   }
 
-  get(content) {
-    return this.myStorage.getItem(content);
+  get(number) {
+    return this.myStorage.getItem(number);
   }
 }
