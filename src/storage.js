@@ -1,13 +1,15 @@
 'use strict';
 
 class Storage {
-
-  
-  store() {
-
+  constructor() {
+    this.myStorage = window.sessionStorage
   }
 
-  get() {
+  store(content) {
+    this.myStorage.setItem(content, content);
+  }
 
+  get(content) {
+    return this.myStorage.getItem(content);
   }
 }
