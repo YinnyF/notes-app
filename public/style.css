@@ -1,3 +1,89 @@
 #note-list {
-  border: 2px solid black;
+  list-style: none;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.note-pop-up {
+  margin: 0 auto;
+  overflow-y: scroll;
+  padding: 20px;
+  border-top: 1px solid #ddd;
+  width: 400px;
+  height: 250px;
+  visibility: hidden;
+  background-color: #fff;
+  border-radius: 5px;
+  animation: note .3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  animation-play-state: paused;
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+  0 100px 80px rgba(0, 0, 0, 0.12)
+}
+
+
+
+.close-btn {
+  display: flex;
+  align-items: center;
+  visibility: hidden;
+  justify-content: center;
+  width: 15px;
+  height: 15px;
+  background-color:rgb(241, 50, 50);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border-radius: 50%;
+  color: white;
+  border: none;
+  -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+      -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+          box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+.close-btn:hover {
+  transform: scale(1.06);
+}
+
+.close-btn span {
+  color: rgb(241, 50, 50);
+}
+
+.close-btn:hover span {
+  visibility: visible;
+  color: black;
+}
+
+header {
+  position: fixed;
+  width: inherit;
+  height: 20px;
+}
+
+#note {
+  font-size: 1.2rem;
+  padding: 0 10px 10px 30px;
+}
+
+@keyframes note {
+  from {
+    width: 0px;
+    height: 0px;
+  } to {
+    width: 400px;
+    height: 250px;}
 }
