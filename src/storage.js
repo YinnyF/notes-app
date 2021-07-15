@@ -3,6 +3,8 @@
 class Storage {
   constructor() {
     this.myStorage = window.sessionStorage;
+    // fix for angry session storage
+    this.myStorage.removeItem("IsThisFirstTime_Log_From_LiveServer");
     this.noteId = this.myStorage.length + 1;
   }
 

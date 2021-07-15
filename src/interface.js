@@ -2,6 +2,7 @@
 
 let myStorage = new Storage();
 let newNoteId;
+let title = new Title();
 
 document.addEventListener("DOMContentLoaded", () => {
   displayLinksFromStorage();
@@ -9,24 +10,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const makeClickSubmitCreateLink = () => {
   let noteText = document.getElementById('note-text').value;
-  newNoteId = storeNote(noteText);
+  newNoteId = myStorage.store(noteText);
+  title.createTitle(noteText);
   createLink();
 }
 
-const storeNote = (noteText) => {
-  return myStorage.store(noteText);
-}
-
 const createLink = () => {
-  let title = getTitle();
+  let thisTitle = title.getTitle();
   let newEl = document.createElement('li');
-  let newText = document.createTextNode(title);
+  let newText = document.createTextNode(thisTitle);
   addingNewElement(newEl, newText);
-}
-
-const getTitle = () => {
-  let note = myStorage.get(newNoteId);
-  return note.length < 20 ? note : note.slice(0, 19)
 }
 
 const addingNewElement = (newEl, newText) => {
@@ -38,11 +31,12 @@ const addingNewElement = (newEl, newText) => {
 }
 
 const displayLinksFromStorage = () => {
-  for (let i = 1; i < myStorage.getNextId() - 1; i++) {
+  for (let i = 1; i < myStorage.getNextId(); i++) {
     let note = myStorage.get(i);
-    let title = note.length < 20 ? note : note.slice(0, 19);
+    title.createTitle(note);
+    let thisTitle = title.getTitle();
     let existingEl = document.createElement('li');
-    let existingText = document.createTextNode(title);
+    let existingText = document.createTextNode(thisTitle);
     existingEl.appendChild(existingText);
     existingEl.setAttribute('id', i)
     let listPosition = document.getElementsByTagName('ul')[0];
