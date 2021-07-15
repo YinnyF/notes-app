@@ -19,7 +19,7 @@ const storeNote = (noteText) => {
 
 const createLink = () => {
   let title = getTitle();
-  let newEl = document.createElement('li');
+  let newEl = document.createElement('p');
   let newText = document.createTextNode(title);
   addingNewElement(newEl, newText);
 }
@@ -32,7 +32,7 @@ const getTitle = () => {
 const addingNewElement = (newEl, newText) => {
   newEl.appendChild(newText);
   newEl.setAttribute('id', newNoteId)
-  let listPosition = document.getElementsByTagName('ul')[0];
+  let listPosition = document.getElementsByTagName('h4')[0];
   listPosition.appendChild(newEl);
   makeClickLinkDisplayNote(newNoteId);
 }
@@ -41,11 +41,11 @@ const displayLinksFromStorage = () => {
   for (let i = 1; i < myStorage.getNextId() - 1; i++) {
     let note = myStorage.get(i);
     let title = note.length < 20 ? note : note.slice(0, 19);
-    let existingEl = document.createElement('li');
+    let existingEl = document.createElement('p');
     let existingText = document.createTextNode(title);
     existingEl.appendChild(existingText);
     existingEl.setAttribute('id', i)
-    let listPosition = document.getElementsByTagName('ul')[0];
+    let listPosition = document.getElementsByTagName('h4')[0];
     listPosition.appendChild(existingEl);
     makeClickLinkDisplayNote(i);
   }
@@ -72,6 +72,8 @@ const displayNote = (thisNote) => {
 const makeNoteVisible = () => {
   document.querySelector('.close-btn').style.visibility = 'visible';
   document.querySelector('.note-pop-up').style.visibility = 'visible';
+  document.querySelector('main').style.filter = "blur(1px)";
+  document.querySelector('section').style.filter = "blur(1px)";
 }
 
 const closeNote = () => {
@@ -80,5 +82,7 @@ const closeNote = () => {
     document.querySelector('.note-pop-up').style.WebkitAnimationPlayState = "paused";
     document.querySelector('.note-pop-up').classList.remove('note-pop-up');
     document.querySelector('.close-btn').style.visibility = 'hidden';
+    document.querySelector('main').style.filter = "blur(0px)";
+  document.querySelector('section').style.filter = "blur(0px)";
   });
 }
