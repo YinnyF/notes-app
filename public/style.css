@@ -4,20 +4,18 @@ body {
   font-family: 'Poppins', sans-serif;
   display: grid;
   grid-template-areas: "note list";
-  grid-template-columns: 1fr;
-  grid-template-rows: 500px 200px;
+  grid-template-columns: 55% 1fr;
+  grid-template-rows: 1fr;
   grid-gap: 30px;
   margin: 0 auto;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 main {
   grid-area: note;
   display: flex;
   justify-content: flex-end;
+  align-items: flex-end;
+  
 }
 
 #note-list {
@@ -29,16 +27,24 @@ main {
 
 section {
   grid-area: list;
-  height: 556px;
+  height: 490px;
   display: flex;
-  justify-content: flex-end;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-end;
 }
 
 h2 {
-  padding: 10px;
+  padding: 5px;
+  box-sizing: border-box;
   margin: 0;
+  text-align: center;
+  background-color: rgb(100, 100, 100);
+  width: inherit;
+  color: white;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  font-weight: 400;
+  font-size: 1.3rem;
 }
 
 .notebook {
@@ -62,6 +68,7 @@ h2 {
 
 #title {
   letter-spacing: 2px;
+  text-align: center;
 }
 textarea {
   height: 360px;
@@ -72,20 +79,27 @@ textarea {
   0 12.5px 10px rgba(0, 0, 0, 0.06);
   padding: 10px;
   box-sizing: border-box;
+  border-top: 1px solid #ddd;
+  border-radius: 5px;
 }
 
 #create-note {
   width: 100%;
-  padding: 10px;
+  padding: 7px;
   border: none;
   border-radius: 5px;
   letter-spacing: 1px;
+  background-color: rgb(100, 100, 100);
+  color: white;
+  font-weight: 400;
+  font-size: 1.1rem;
 }
 
 a {
   text-decoration: none;
   list-style: none;
   color: black;
+  font-size: .9rem;
 }
 
 .note-pop-up {
@@ -98,13 +112,13 @@ a {
   visibility: hidden;
   background-color: #fff;
   border-radius: 5px;
-  animation: note .3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  animation: note .2s cubic-bezier(0.645, 0.045, 0.355, 1);
   animation-play-state: paused;
   position:absolute;
-  top: 30%;
-  left: 10%;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
-  transform: translate(0);
+  
   box-shadow:
   0 2.8px 2.2px rgba(0, 0, 0, 0.034),
   0 6.7px 5.3px rgba(0, 0, 0, 0.048),
