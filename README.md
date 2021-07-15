@@ -1,10 +1,18 @@
 # notes-app
 
-## Mock Up
+## Specification
+
+Create a front end, single page, note taking app using only vanilla JavaScript.
+
+Mock Up
+
 ![Notes app home page mockup](images/notes-home-page-mock-up.png)
+
 ![Notes app note page mockup](images/notes-note-page-mock-up.png)
 
-## User Stories
+
+<details>
+  <summary>User Stories</summary>
 
 ```
 As a programmer
@@ -36,10 +44,44 @@ As a programmer
 I can refresh the page and still see my notes
 So I can remember what I took down
 ```
+</details>
+
+## Team Members
+* <a href="https://github.com/camilla000">Camilla</a>
+* <a href="https://github.com/frank-mck">Frank</a>
+* <a href="https://github.com/YinnyF">Cynthia</a>
 
 ## Diagram
-![sequence diagram](images/diagram.png)
+
+<img src="images/diagram.png" width=500 />
+
 (Draft)
 
 ## Domain Model
 (Pending)
+
+## How to Run
+To Run App: open `index.html` with Live Server.
+
+To Run Tests: open `TestRunner.html` with Live Server.
+
+## Development process
+### Testing Interface
+<img src="images/test-runner/v1.png" width=500 />
+
+⬇️
+
+<img src="images/test-runner/v2.png" width=500 />
+
+⬇️
+
+<img src="images/test-runner/v3.png" width=500 />
+
+⬇️
+
+✨ Results ✨
+
+<img src="images/test-runner/v4.png"/>
+
+### Notes App Interface
+TBC
