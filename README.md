@@ -84,4 +84,14 @@ To Run Tests: open `TestRunner.html` with Live Server.
 <img src="images/test-runner/v4.png"/>
 
 ### Notes App Interface
-TBC
+<img src="images/interface/v1-1.png" width=500 />
+
+<img src="images/interface/v1-2.png" width=500 />
+
+⬇️
+
+✨ Results ✨
+
+<img src="images/interface/v2-1.png" />
+
+<img src="images/interface/v2-2.png" />
