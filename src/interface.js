@@ -17,7 +17,7 @@ const makeClickSubmitCreateLink = () => {
 
 const createLink = () => {
   let thisTitle = title.getTitle();
-  let newEl = document.createElement('li');
+  let newEl = document.createElement('p');
   let newText = document.createTextNode(thisTitle);
   addingNewElement(newEl, newText);
 }
@@ -25,7 +25,7 @@ const createLink = () => {
 const addingNewElement = (newEl, newText) => {
   newEl.appendChild(newText);
   newEl.setAttribute('id', newNoteId)
-  let listPosition = document.getElementsByTagName('ul')[0];
+  let listPosition = document.getElementsByTagName('h4')[0];
   listPosition.appendChild(newEl);
   makeClickLinkDisplayNote(newNoteId);
 }
@@ -35,11 +35,11 @@ const displayLinksFromStorage = () => {
     let note = myStorage.get(i);
     title.createTitle(note);
     let thisTitle = title.getTitle();
-    let existingEl = document.createElement('li');
+    let existingEl = document.createElement('p');
     let existingText = document.createTextNode(thisTitle);
     existingEl.appendChild(existingText);
     existingEl.setAttribute('id', i)
-    let listPosition = document.getElementsByTagName('ul')[0];
+    let listPosition = document.getElementsByTagName('h4')[0];
     listPosition.appendChild(existingEl);
     makeClickLinkDisplayNote(i);
   }
@@ -66,6 +66,8 @@ const displayNote = (thisNote) => {
 const makeNoteVisible = () => {
   document.querySelector('.close-btn').style.visibility = 'visible';
   document.querySelector('.note-pop-up').style.visibility = 'visible';
+  document.querySelector('main').style.filter = "blur(1px)";
+  document.querySelector('section').style.filter = "blur(1px)";
 }
 
 const closeNote = () => {
@@ -74,5 +76,7 @@ const closeNote = () => {
     document.querySelector('.note-pop-up').style.WebkitAnimationPlayState = "paused";
     document.querySelector('.note-pop-up').classList.remove('note-pop-up');
     document.querySelector('.close-btn').style.visibility = 'hidden';
+    document.querySelector('main').style.filter = "blur(0px)";
+  document.querySelector('section').style.filter = "blur(0px)";
   });
 }
