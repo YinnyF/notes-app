@@ -12,4 +12,8 @@ class Note {
   getNote(i) {
     return this.notes[i -1];
   }
+
+  getNotes() {
+    return this.notes;
+  }
 }
