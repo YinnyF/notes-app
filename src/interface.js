@@ -1,5 +1,6 @@
 'use strict';
 
+const emoji = new Emoji();
 let myStorage = new Storage();
 let newNoteId;
 let title = new Title();
@@ -10,7 +11,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const makeClickSubmitCreateLink = () => {
   let noteText = document.getElementById('note-text').value;
-  newNoteId = myStorage.store(noteText);
+  newNoteId = emoji.convert(noteText).then(data => {
+    myStorage.store(data);
+    location.reload();
+  });
+
   title.createTitle(noteText);
   createLink();
 }
