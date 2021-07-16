@@ -6,6 +6,6 @@ describe('Emoji', () => {
     let emoji = new Emoji();
     let content = "Hello this is :sunflower:";
 
-    expect(emoji.getEmojiData(content).then()).toBeATypeOf("object");
+    expect(emoji.convert(content).then()).toBeATypeOf("object");
   });
 });
